@@ -1,1 +1,124 @@
-# videos-file
+
+##Terraform Explained!
+
+What is Terraform?
+What terraform does (what terraform is used for)?
+What is the difference between terraform and Ansible.
+When to use Terraforn, and ansible
+Terraform archetecture and commands
+Example of Terraform configuration file
+
+A good overview and understanding of how attribut works and how it does its job.
+
+What is terraform? Terraform allows you to automate and manage your infrasture, and your plaflorm,
+and services that run on the infrastructure. Terraform is open source and uses declarative language
+(meaning you don't have to define every step of how this automation and management is done but define what end result you want)
+and terraform will figure out how to exercute it. While with imperative style, you specify how to exercute each step.
+
+What does it mean when we say terraform is a tool for infrastructure provisioning? 
+Let's say you just started a project where you will create some application, and you want to setup an infrastructure from
+scratch where this application will run. How does this infrasture look like?
+Let's say in the infrastructure, you want to spin up several servers where you will deploy your...
+...five micro service applications that make up your application as Docker container. Also you re gonna deploy a database container.
+
+You decide to use AWS platform to build your whole infrastructure on. The first step will be to go to AWS and prepare the set up (infrastructure) so that the application can be deployed there.
+This means you:-
+a)- create your private networks space.
+b)- create EC2 server instances,
+c)- install Docker in each of those including other tools that you may need for thr application,
+d)- Set up security on your servers like firewalls,
+
+Once the insfrastructure is prepeared, you can now deploy your Docker Application or docker containers on that prepared infrastructure.
+So these are two different tasks (or two separate steps) for creating the whole setup. That is, 
+
+1- The first one is Provisioning the Infrastures or preparing everything so the application can be deployed.
+2- The second is Deploying the application on (the infrastructure) it.
+
+So, you might even have two seperate teams or two individuals who do these two separate tasks. In the possible sinario, DevOps team...
+...configures the infrastructure and Software Developer team deploys the application on this prepared infrastructure.
+
+Now where does Terraform come into this whole thing?
+Terraform is is used in the first part where you provision the infrastructure to prepare it for the application deployment...
+...i.e, crating the VPC, spining up the servers (EC2 instances), creating the security, creating the AWS users and permissions,...
+... maybe installing docker spacific veraions on servers, etc. All these need to be done in a correct order because one task may depends on the other.
+
+What is the difference between Ansible and Terraform? Because the seem to be doing the same thing especially if you read the official definitions or the official documentation, they sound like the same tools. So, the question is pretty logical. What is the difference between them and which one should I use for my project?
+
+So, let’s see the similarities and differences between these two using our example set up.
+
+Similarity:
+
+- First all, Terraform and Ansible are both infrastructure as a code. This means there both used to automate (provisioning, configuring, and managing the infrastructure). 
+
+Differences:
+- However, Terraform is mainly infrastructure provisioning tool. This is where its main power lies. But it also has possibilities to deploy applications in other tools under infrastructure. 
+- ⁠Ansible on the other hand is mainly a configuration tool. So, once the infrastructure is provisioned and it’s there, Ansible can be used to configure it (the infrastructure), deploy the application, install and update software under infrastructure, etc. 
+
+As you can see, there overlaps of what each tool does and this creates a confusion. Other differences to consider in terms of those overlaps are:-
+ 
+- Ansible is more mature while Terraform is a relatively new, and because of that, it’s also changing dynamically. Terraform is much more advanced in orchestration.
+
+To summarize the difference, 
+- Terraform is a better tool for provisioning infrastructure while Ansible is a better tool for configuring the infrastructure, deploying, and installing applications and services on them. So, it’s a common practice where DevOp engineers the combination of these tools to cover the whole setup end to end using both for their own strength, instead of just using one tool. (Get to know more about Ansible, compare Infrastructure as a code tools like Ansible, Chef, CloudFormation, Terraform, etc. in more detail. Also know why each is best in one area even though they can do other task as well).
+
+Now, let’s go back to our use case where we created the infrastructure using terraform, and on AWS provisioned successfully for a project, and now you deploy the application on it. Now you decided you want to add 5 more severs to the existing infrastructure to deploy more micro services because your team developed some more features, and then they need to be deployed. And you also want some security configuration or maybe remove some stuff you configured at the beginning. Now we’re in the face of managing the existing infrastructure, adding some stuff, reconfiguring, removing some stuff, etc. Using Terraform, you can make such adjustments to infrastructure pretty easily. This task of managing infrastructure is very important because once you have created the initial infrastructure for your project, you will be continuously adjusting and changing and because of that, you also need some automation tool that will do most of the heavy lifting for you so you don’t have to manually configure them. So, once you are set up with terraform you create, change, and maintain your infrastructure.
+
+Another useful thing or useful case could be replicating the infrastructure. Let’s say after you have tested the infrastructure and everything worked fine, you now decide you want to release your application in the PRO environment. So you want to create a production environment that replicates this exact set up and keep the first as a Dev environment where you can test new features, the micro services, and update before you launch it into production. Again, you can use terraform herevto automate that process. So, you can easily spin up an identical infrastructure and set up using the same terraform code that you used for the first set up-the Dev environment set up. You can do the same to spin up the identical staging server for the STAGING environment as well. So this makes task supper easy. 
+
+How does terraform do all this?
+How does terraform actually connects to the infrastructurall provider platforms and uses all these technologies used to provision stuff? For example, how does terraform connects to AWS to create virtual space, start ec2 instances, configure networking, and security, etc.
+
+In order to do the job, terraform has two main components that make up its architecture. 
+- The first one is Terraform CORE and the core uses two input sources in order to do its job. So it takes terraform configuration(TF-Config) you as user write and where you define what needs to be created or provisioned.
+
+- The second one is Terraform state where terraform keeps the up-to-date state of how the current set up of the infrastructure looks like.
+
+So, what CORE does is that it takes its inputs and figures out the plan of what needs to be done (i.e, what needs to be created, updated, or destroyed?) . So, it compares the current state, what needs to be done? What is the configuration that you desire? What is the end results? It compares them and when it sees there’s a different or you want something else, then what the current state is, it figures out what needs to be done to get to the desire state in the configuration file. So, what needs to be created, updated, deleted in which order on that infrastructure set up?
+
+The second component or part of the architecture are the PROVIDERS for specific technologies. This could be cloud providers like AWS (IaaC), AZURE (PaaS) or other Infrastructure As a Service (IaaS) platforms for the infrastructure level task. But Terraform as we mentioned are also providers for more high-level components like Kubenetes (K8s), or other platforms as a service tool. Even some softwares as a service. It gives you the possibility to create stuff on different levels like create the AWS infrastructure, then deploy or create k8s ontop of it then create services inside that k8s cluster. And it does this through those providers. 
+
+Terraform (TF) has over 100 providers with over 1000 resources for these different technologies and each provider then gives TF users access to its resources. So, through AWS, for instance, you have access to 100 of AWS resources such as the EC2 instances, the AWS users, etc. With K8s provider, you get access to K8s resources like services, deployment, and Namespaces, etc. In this way, TF tries to help you provision and cover the complete application setup from infrastructure all the way to the application. This is sure convenient. But as we mentioned earlier in the comparison between Ansible and TF, TF strength is actually in the infrastructure provisioning and for the other stuff(deployment) , Ansible is good at it. 
+
+So, once the creates an execution plan based on the inputs from config file and state, it then uses providers for specific technologies to execute the plan, to connect to those platforms (AWS platform, GitHub, K8s, and Mysql platforms) and to actually carry out those execution steps. 
+
+
+TF congratulations file 
+
+In TF config file, the provider is configured and through the provider, you now have the resource which you can create with some attributes. The syntax is  very intuitive, basically we will say you define what you want, 
+
+
+Declarative Vs. Imperative 
+Let’s talk about the declarative approach that TF files are written in. This is important to understand. So, what does declarative mean exactly?
+
+Declarative: 
+When you create a TF file, instead of defining what step to be executed to create the VPC, or to spin up five (5) EC2 instances, or create the network configuration, you define the end state you desire. You can say “I want 5 servers with network configuration , I want one AWS user that has these permissions access all the servers” TF go and do that for me. You have to define the permissions in the file.
+
+Imperative: (define exact steps-How)
+
+So, instead of defining exactly what to do, which the imperative approach, you define what the end result should be- the declarative approach. For the initial setup, this may not make much difference. So, when it is the configuration of imperative and declarative approach, it might look pretty similar.  
+
+But consider when you’re updating your infrastructure like removing a server, or adding another server, or making other adjustments, with imperative config file (imperative approach), you will say “configuration file:
+- remove 2 servers,
+- add firewall config,
+- add some permissions to the AWS user, etc”. So, you give instructions of what to do.
+
+With the declarative approach (declarative file) like in TF, for example, you will say my new state is with:
+- 7 servers
+- this firewall config
+- users with the following permissions. Do whatever needs to done to get from the current state to the new desired state. Now you don’t actually have to calculate and decide how many servers need to be added. You just say I want 7 servers at the end. Or you don’t actually need to calculate how many permissions or which permissions you should add. You just say I want these sets of permissions to came out at the end.
+
+So with the declarative approach, you just adjust the old configuration file and re-execute it instead of adding new setup instructions. This is obviously very comfortable because your files stay clean and small. But also know what the current setup is just by looking at the config file because there’s always the end result.
+
+But for the first approach, the imperative, you have to some how edit this up and figure out the data between all the changes applied by multiple instructions. 
+
+So you have created TF config file that defines your desired infrastructure setup on AWS. Now how do you make TF take action? 
+TF has commands which you can execute to go through different stages. There are pretty clear and straightforward. 
+
+- The first command (cmd)  is “refresh”. With this cmd, TF will query the infrastructure provider (AWS in our case) to get the current (up-to-date) state. So, TF will now know what is the current state of the infrastructure 
+
+The next cmd is “plan”. Remember we say the CORE is responsible for taking the current state and the configuration file as input and decides based on what needs to be done. That’s the plan. So what TF needs to do in order to achieve the desired state that you defined in TF config file. If it’s an initial setup, it figures out all thestep to create the desired setup. If it’s an update, it compares the existing setup with the new desired state and figures out what changes and adjustments need to be madein which order to create the new desired state. For example, adding your server, adding new permission,etc. Now this is just a plan. This is how the CORE can construct the plan logically. 
+
+The next cmd is the cmd where the actual execution happens. That-is “Appy” cmd. So we “apply”, you can execute the plan. So, “plan” is a preview of what is gonna happen. If you execute the “apply”, obviously terraform in the background will do the refresh get the up-to-date state, create the plan, and then apply it. Which means if you want to execute the configuration file, you can just execute the apply command and it will do all this.
+
+The next cmd is “destroy” which obviously destroys the whole setup, removing elements one by one in the right order, cleaning up all the resources that we created, basically reverting everything that has been created.
+
