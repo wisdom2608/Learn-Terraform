@@ -8,7 +8,7 @@ How to make programatic API calls to AWS using terraform (How to Connect AWS wit
 #Reference 1: https://youtu.be/QhmFnlbbwP4?si=QEC_O70czmk9XPJp
 
 
-How To Securely Store Your AWS Credentials in Terraform
+How To Securely Store Your AWS Credentials in Terraform using vault.
 #Reference 1: https://youtu.be/P1rsGaFoQ7U?si=FCK3kemd5uZ6gW6z
 #Reference 1: 
 #Reference 1: 
