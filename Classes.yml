@@ -18,16 +18,25 @@ Terraform Variables and Outputs (How to create resource with terraform using ver
 #Reference 1:
 #Reference 1:
 #Reference 1:
+
+How to create Amazon EC2 instance using Terraform | Launch multiple ec2 instancse with terraform code
+#Reference 1: https://youtu.be/E0j40hLwjhI?si=3UPhpI_s8euvV_vz (by Cloud Champ)
+#Reference 1:
+
+How to Create AWS Security groupand attach to instance  using Terraform | security group tf code
+#Reference 1: https://youtu.be/Ldj9HWv4CpE?si=C06WjSk0VzBZPLhD (by Cloud Champ)
 #Reference 1:
 #Reference 1:
+
+How to create AWS Keypair using Terraform and attach to EC2 instance | Key to SSH in EC2 server
+#Reference 1: https://youtu.be/lJbf0J9rRzE?si=KxEac1Ai9Vt3MtzJ (by Cloud Champ)
+#Reference 1:
+
+How to Bootstrap EC2 Instance with user data script in Terraform | Terraform userdata example
+#Reference 1: https://youtu.be/NPQ8HFEuGxs?si=89lJ3KfQmtQv1qvL (by Cloud Champ)
 #Reference 1:
 #Reference 1:
-#Reference 1:
-#Reference 1:
-#Reference 1:
-#Reference 1:
-#Reference 1:
-#Reference 1:
+
 #Reference 1:
 #Reference 1:
 #Reference 1:
