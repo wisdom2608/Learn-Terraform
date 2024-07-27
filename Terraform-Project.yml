@@ -1,0 +1,50 @@
+ # PROJECT I
+
+ # - Creating a VPC
+
+ #    Step-by-step guide on creating a VPC using the AWS Management Console.
+ #    Configuring the VPC settings such as CIDR block, DNS resolution, and DNS hostname.
+
+ # - Configuring Public Subnet and Creating Private Subnet
+
+ #    Setting up a public subnet within the VPC.
+ #    Allocating an Elastic IP address and configuring the route table for internet access.
+ #    Creating a private subnet within the VPC.
+ #    Configuring the route table to allow communication within the VPC.
+
+ # - Setup Internet Gateway
+
+ # - Create Public and Private Route Table
+
+ # - Launching EC2 Instances
+
+ #    Launching EC2 instances in both the public and private subnets.
+ #    Configuring security groups for proper communication.
+
+ # - Creating an S3 Bucket
+
+ #    Setting up an S3 bucket that the private EC2 instance will access.
+
+ # - Configuring VPC Endpoint
+
+ #    Creating a VPC endpoint for S3 to establish a private connection.
+ #    Adjusting security group settings for enhanced security.
+
+ # - Testing Connectivity
+
+ #    Testing connectivity from the private EC2 instance to the S3 bucket.
+
+ # - Conclusion
+
+ #    Summarizing key steps and highlighting the importance of proper VPC configuration.
+
+#PROJECT II
+# 1- Create VPC.
+# 2-Create Internet gateway.
+# 3-Create a custom route table.
+# 4-Create a subnet.
+# 5-Associate the subnet with thr Route table 
+# 6-Create a Security group to allow port 22, 80, and 443.
+# 7-Create a network interface with an ip in the subnet that was created in step 4
+# 8- Assign an elastic ip to the network interface created in step 7
+# 9- Create an ubuntu server and install/start apache2
