@@ -122,3 +122,58 @@ The next cmd is the cmd where the actual execution happens. That-is “Appy” c
 
 The next cmd is “destroy” which obviously destroys the whole setup, removing elements one by one in the right order, cleaning up all the resources that we created, basically reverting everything that has been created.
 
+
+
+##############################################################################################################  
+                                                  ANOTHER EXPLANATION
+
+
+Terraform is an open source infrastructure as code (IaC) tool which is created by HashiCorp that lets you define and provision your infrastructure in form of  code on various cloud providers like AWS, AZURE, GCP, VimWare, OpenStack, Kubenetes and a lot more. Terraform supports thousands of different providers.
+
+In simple terms, TF is a IaC tool in DevOps to create resources on different cloud providers and platforms. But what does by 
+
+Infrastructure as Code ( IaC)?
+This is the way of creating and managing computer infrastructures such as servers, databases, network, using code instead of doing it manually.  Instead of creating these services using the management console, you define them as code which is faster and provide you with so many benefits. Like you can store this code on GitHub git lab, codecommit, etc.
+
+Using IaC, you can scale your application very fast, you can recreate them if there’s an issue.
+
+
+Why TF is popular as compared to other IaC tools, and why learn it?
+
+Despite so many IaC tools in the market like Ansible, AWS CloudFormation, Azure template, google deployment manager, puppet, Vagrant, Crossplane, etc, Terraform is still the most used IaC tool due to its so many benefits.
+
+The main one is multi-cloud  support. This means with TF, you can create infrastructure in AWS, Azure, and GCP, IBM, Oracle with  everything in just one second click. 
+So using TF, you can create multiple infrastructures in multiple different cloud and that’s what you can’t do with CloudFormation.  You can’t create Azure template, azure resources using AWS CloudFormation. This is why TF is mostly used.
+
+The second benefit is the Declarative configuration language (HCL) it uses. So TF uses HasiCorp Configuration Language (HCL) with which you can create your resources in AWS, Azure, GCP, making it pretty easy. 
+
+The third benefit is that TF is large and have an active community. So if you got issue with TF, you can easily find solutions and documentations itself, you can find videos about terraform as well.
+
+
+The fourth is the state management.
+
+TF works using state, everything you do on the console is always recorded in the state.
+
+How TF works, how TF create resources, What are the different providers?
+
+How TF works:
+
+- The first stage is the config stage where you need to write down the infrastructure configuration, 
+
+- The second stage is the planing stage. Now that you have Config with resources written on it,  you can now create the plan and...
+... check what terraform will add, delete, update according to the configuration you’ve done.
+
+- If the plan is okay and everything is the way you like them to be, we can now move to the execution stage.
+  Here you upload the plan and TF starts adding, updating, deleting things in the provider according to the configuration you have written in your terraform script. 
+  At the same time TF manages the steps,  it keeps track of all of the changes happening in the cloud and make sure it matches...
+  ... with the infrastructure configuration you have desired. Once it’s done, you can see your resources in the cloud.
+  If want any changes, then you can directly update your infrastructure configuration file.
+
+- And lastly, if you don’t want the resources again, you can just run the “destroy” to delete and clean up the resources.
+
+Why learn Terraform and why is it popular in the market?
+
+ - There is increasing cloud adoption and every company is shifting their applications from on-promises to cloud and terraform is the tool they’re using to do that. 
+ So, they create their infrastructure in the form of code and store in GitHub and GitLab. So, it’s important to learn TF.
+ TF can also be integrated with CICD tools and other DevOps tools. 
+  If you’re a person who knows terraform, if you are certified in terraform, you have more, opportunity to get a job.
