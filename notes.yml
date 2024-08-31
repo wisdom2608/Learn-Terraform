@@ -8,7 +8,7 @@ When to use Terraforn, and ansible
 Terraform archetecture and commands
 Example of Terraform configuration file
 
-A good overview and understanding of how attribut works and how it does its job.
+A good overview and understanding of how attribute works and how it does its job.
 
 What is terraform? Terraform allows you to automate and manage your infrasture, and your plaflorm,
 and services that run on the infrastructure. Terraform is open source and uses declarative language
