@@ -1,0 +1,6 @@
+credentials.tfrc folder_path: C:\Users\Wisdom\AppData\Roaming\terraform.d
+How to reference this path in terraform file configuration: file(~/home/AppData/Roaming/terraform.d/<name_of_the_token.json>)    
+
+ssh_key folder path: C:\Users\Wisdom\.ssh
+
+How to reference this path in terraform file configuration: file(~/home/.ssh/<name_of_the_key.pub>)
