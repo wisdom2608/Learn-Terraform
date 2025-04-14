@@ -1,0 +1,1 @@
+# Configure AWS provider in terraform cloud

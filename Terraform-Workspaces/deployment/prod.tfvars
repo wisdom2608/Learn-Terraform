@@ -1,0 +1,6 @@
+region = "us-east-2"
+ami    = "ami-0c11a84584d4e09dd"
+# instance_type = "t2.medium"
+key_name    = "VM-KP"
+env_prfix   = "Pro"
+environment = "Prod"

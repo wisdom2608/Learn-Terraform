@@ -1,0 +1,38 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+    }
+  }
+
+  backend "s3" {
+    bucket         	   = "terraform-wisdom2608"
+    key              	   = "prod/terraform.tfstate"
+    region         	   = "us-east-2"
+
+  }
+}
+
+
+
+
+###############
+pipeline{
+    agent any
+    environment{
+        AWS_ACCESS_KEY_ID = credentials("AWS_ACCESS_KEY_ID")
+        AWS_SECRET_ACCESS_KEY = credentials("AWS_SECRET_ACCESS_KEY") 
+        GITHUB_PASSWORD = credentials("GITHUB_PASSWORD")
+        region ="us-east-2"
+    }
+    stages{
+        stage('Checkout SCM'){
+            steps{
+                scripts{
+                    
+                }
+            }
+        }
+        
+    }
+}

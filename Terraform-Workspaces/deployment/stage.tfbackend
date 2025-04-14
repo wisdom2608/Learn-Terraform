@@ -1,0 +1,14 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+    }
+  }
+
+  backend "s3" {
+    bucket         	   = "terraform-wisdom2608"
+    key              	   = "stage/terraform.tfstate"
+    region         	   = "us-east-2"
+
+  }
+}
