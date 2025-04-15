@@ -12,7 +12,7 @@ variable "instance_type" {
 module "EC2" {
   source        = "./modules/EC2"
   ami           = var.ami
-  instance_type = lookup(var.instance_type, terraform.workspace, "t2.micro")
+  instance_type = lookup(var.instance_type, terraform.workspace, "t2.micro") 
   key_name      = var.key_name
   env_prefix    = var.env_prefix
   environment   = var.environment

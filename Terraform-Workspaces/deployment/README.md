@@ -1,5 +1,5 @@
 # TERRAFORM WORKSPACES
-When you have different tfvars file(e.g `dev.tfvars`, `staging.tfvars`, and `prod.tfvars`) and decide to pass one of the tfvars files to your CLI
+When you have different tfvars file(e.g `dev.tfvars`, `staging.tfvars`, and `prod.tfvars`) you can decide to pass one of the tfvars files to your CLI
 
 If you want to create resources in the dev environment, the cmd is 
 
@@ -283,12 +283,12 @@ For example if we want to create resources in the `dev` environment, we can run
 terraform apply —var-file=dev.tfvars
 ```
 
-if we wan to create resources in the `staging` environment, we can run
+if we want to create resources in the `staging` environment, we can run
 
 ```bash
 terraform apply —var-file=stage.tfvars
 ```
-if we wan to create resources in the `prod` environment, we can run
+if we want to create resources in the `prod` environment, we can run
 
 ```bash
 terraform apply —var-file=prod.tfvars
