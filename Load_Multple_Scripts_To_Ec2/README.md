@@ -1,7 +1,5 @@
 ## How To Load Multiple Scripts To EC2 instance Using Terraform
-These scripts will run automatically when EC2 instance boots for the first time.
-
-🔹 Step 1. `data "template_file" "user_data"` Block
+🔹 These scripts will run automatically when EC2 instance boots for the first time.
 
 ✅ Directory Structure. You can change it as per your requirement
 ```bash
