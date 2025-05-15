@@ -94,7 +94,13 @@ vars = {
 ```
 
 ## ✅ EXAMPLE: 
-Let's Install **node_exporter**, and **prometheus** on the same Ec2 Instance, and then **Node_Exporter** on another instance .
+Let's install **node_exporter**, and **prometheus** on the same Ec2 Instance, and then **Node_Exporter** on another instance. At the moment of writing, the version of:
+ - prometheus is 3.3.1.
+ - grafana is 12.0.0.
+ - node_exporter is 12.0.0.
+This may change in the future or in the moment you are reading this article.
+
+
 
 ✅ Directory Structure.
 ```bash
