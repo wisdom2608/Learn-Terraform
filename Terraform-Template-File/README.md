@@ -1,5 +1,5 @@
 ## Terraform Template File
-🔹 Terraform `template_file` helps to upload multiple scripts to EC2 instance. The scripts uploaded will run automatically when an EC2 instance boots for the first time. The `template_file` is defined using the `data` block.
+🔹 Terraform `template_file` helps to upload multiple scripts to EC2 instance. These scripts will run automatically when an EC2 instance boots for the first time. The `template_file` is defined using `data` block.
 
 Please read carefully, and then pratice the **example** that follows.
 
