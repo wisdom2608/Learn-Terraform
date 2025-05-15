@@ -105,7 +105,7 @@ This may change in the future or in the moment you are reading this article.
 
 ✅ **Directory Structure**
 ```bash
-Load_Multiplt_Scripts-EC2/
+Load_Multple_Scripts_To_EC2/
 │
 ├── main.tf                  
 ├── prometheus.sh          
@@ -267,6 +267,6 @@ resource "aws_instance" "node_exporter" {
 }
 ```
 
-
+**Good Luck!!**
 
 
