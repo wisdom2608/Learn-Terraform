@@ -1,9 +1,9 @@
 ## How To Load Multiple Scripts To EC2 instance Using Terraform
 🔹 These scripts will run automatically when an EC2 instance boots for the first time.
 
-Please read carefully, and then pratice the **example** the follows.
+Please read carefully, and then pratice the **example** that follows.
 
-
+## 💡 A. EXPLANATION
 ✅ Directory Structure. You can change it as per your requirement.
 ```bash
 terraform-project/
@@ -94,7 +94,7 @@ vars = {
 }
 ```
 
-## ✅ EXAMPLE: 
+## ✅ B. EXAMPLE: 
 Let's install **node_exporter**, and **prometheus** on the same Ec2 Instance, and then **Node_Exporter** on another instance. At the moment of writing, the version of:
  - prometheus is 3.3.1.
  - grafana is 12.0.0.
