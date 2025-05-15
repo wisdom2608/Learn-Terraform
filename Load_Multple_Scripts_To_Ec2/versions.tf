@@ -6,11 +6,11 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "terraform-wisdom2608"
+    bucket = "YourBucketName"
     key    = "devsecops/terraform.tfstate"
-    region = "us-east-2"
+    region = "YourRegion"
   }
 }
 provider "aws" {
-  region = "us-east-2"
+  region = "YourRegion"
 }

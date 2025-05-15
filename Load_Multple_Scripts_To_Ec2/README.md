@@ -1,7 +1,10 @@
 ## How To Load Multiple Scripts To EC2 instance Using Terraform
-🔹 These scripts will run automatically when EC2 instance boots for the first time.
+🔹 These scripts will run automatically when an EC2 instance boots for the first time.
 
-✅ Directory Structure. You can change it as per your requirement
+Please read carefully, and then pratice the **example** the follows.
+
+
+✅ Directory Structure. You can change it as per your requirement.
 ```bash
 terraform-project/
 │
@@ -11,7 +14,7 @@ terraform-project/
 ├── user_data.tpl            # User data template file
 ```
 - `terraform-project/`: This is the directory which `main.tf`, `scritp1.sh`, `script2.sh`, and `user_data.tpl` are located.
-- `user_data.tpl`: This the file that defines the format in which the scripts will be executed
+- `user_data.tpl`: This the file that defines the format in which the scripts will be executed.
 
 ```bash
 #!/bin/bash
@@ -29,20 +32,20 @@ chmod +x /home/ubuntu/script1.sh /home/ubuntu/script2.sh
 /home/ubuntu/script2.sh
 
 ```
-- `scritp1.sh`: The file that contains first script
+- `scritp1.sh`: The file that contains first script.
 
 ```bash
 sudo apt update -y
 sudo apt ...
 
 ```
-- `script2.sh`: The file for the second script
+- `script2.sh`: The file for the second script.
 ```bash
 sudo apt update -y
 sudo apt ...
 ```
 
-- `main.tf`: This is the file where resources to be created by terraform are configured
+- `main.tf`: This is the file where resources to be created by terraform are configured.
 ```bash
 
 data "template_file" "user_data" {
@@ -100,7 +103,7 @@ This may change in the future or in the moment you are reading this article.
 
 
 
-✅ Directory Structure.
+✅ **Directory Structure**
 ```bash
 Load_Multiplt_Scripts-EC2/
 │
@@ -233,7 +236,7 @@ data "template_file" "node_exporter" {
 }
 
 resource "aws_instance" "prometheus_grafana" {
-  ami                    = "ami-04f167a56786e4b09" # Ubuntu 20.04
+  ami                    = "ami-xxxxxxxx" # Ubuntu 20.04
   instance_type          = "t2.micro"
   key_name               = "VM-KP"
   vpc_security_group_ids = [aws_security_group.devsecops_sg.id]
@@ -242,13 +245,13 @@ resource "aws_instance" "prometheus_grafana" {
     volume_size = 10
   }
   tags = {
-    Name = "Prometheus-Grafana"
+    Name = "Prometheus-Grafana-Sever"
     Env  = "dev"
   }
 }
 
-resource "aws_instance" "app_server" {
-  ami                    = "ami-04f167a56786e4b09" # Ubuntu 20.04
+resource "aws_instance" "node_exporter" {
+  ami                    = "ami-xxxxxxxx" # Ubuntu 20.04
   instance_type          = "t2.micro"
   key_name               = "VM-KP"
   vpc_security_group_ids = [aws_security_group.devsecops_sg.id]
