@@ -1,5 +1,5 @@
-## How To Load Multiple Scripts To EC2 instance Using Terraform
-🔹 These scripts will run automatically when an EC2 instance boots for the first time.
+## Terraform Template File
+🔹 Terraform `template_file` helps to upload multiple scripts to EC2 instance. The scripts uploaded will run automatically when an EC2 instance boots for the first time. The `template_file` is defined using the `data` block.
 
 Please read carefully, and then pratice the **example** that follows.
 
