@@ -1,3 +1,4 @@
+# How to create aws eip and attach it to ec2 instance
 provider "aws" {
   region = "us-east-1"  # Change this to your desired AWS region
 }
